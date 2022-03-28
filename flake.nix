@@ -103,13 +103,14 @@
           hosts = {
             /* set host specific properties here */
             NixOS = { };
+            ristaccia = { };
           };
           importables = rec {
             profiles = digga.lib.rakeLeaves ./profiles // {
               users = digga.lib.rakeLeaves ./users;
             };
             suites = with profiles; rec {
-              base = [ core users.nixos users.root ];
+              base = [ core users.root users.prism ];
             };
           };
         };
@@ -125,6 +126,7 @@
           };
           users = {
             nixos = { suites, ... }: { imports = suites.base; };
+            prism = { suites, ... }: { imports = suites.base; };
           }; # digga.lib.importers.rakeLeaves ./users/hm;
         };
 
