@@ -28,7 +28,13 @@
       displayManager.lightdm.enable = true;
       desktopManager.mate.enable = true;
     };
+    redshift = {
+      enable = true;
+      temperature.night = 2500;
+    };
   };
+
+  location.provider = "geoclue2";
 
   security.rtkit.enable = true;
 
