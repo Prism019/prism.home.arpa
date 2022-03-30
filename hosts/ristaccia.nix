@@ -15,11 +15,22 @@
 
   time.timeZone = "America/Los_Angeles";
 
-  services.xserver = {
-    enable = true;
-    displayManager.lightdm.enable = true;
-    desktopManager.mate.enable = true;
+  services = {
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
+    xserver = {
+      enable = true;
+      displayManager.lightdm.enable = true;
+      desktopManager.mate.enable = true;
+    };
   };
+
+  security.rtkit.enable = true;
 
   networking = {
     useDHCP = false;
@@ -58,6 +69,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    
+    firefox
+    element-web
   ];
 }
