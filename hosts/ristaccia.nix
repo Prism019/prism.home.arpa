@@ -70,6 +70,6 @@
 
   environment.systemPackages = with pkgs; [
     firefox
-    element-web
+    element-desktop
   ];
 }
