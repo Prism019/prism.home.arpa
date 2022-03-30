@@ -15,6 +15,12 @@
 
   time.timeZone = "America/Los_Angeles";
 
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager.mate.enable = true;
+  };
+
   networking = {
     useDHCP = false;
     interfaces.enp34s0.useDHCP = true;
