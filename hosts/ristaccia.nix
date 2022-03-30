@@ -77,5 +77,10 @@
   environment.systemPackages = with pkgs; [
     firefox
     element-desktop
+    gimp
+    libreoffice-fresh
+    mpd
+    gmpc
+    vscodium
   ];
 }
