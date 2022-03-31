@@ -8,6 +8,7 @@
       supportedFilesystems = [ "btrfs" "vfat" ];
       luks.devices."nixos".device = "/dev/disk/by-uuid/2f4b8396-1c98-4b2d-a5a2-9cc0952b50d5";
     };
+    supportedFilesystems = [ "ntfs" ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     kernelModules = [ "kvm-amd" ];
