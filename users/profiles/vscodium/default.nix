@@ -7,6 +7,7 @@
       matklad.rust-analyzer
       arrterian.nix-env-selector
       jnoortheen.nix-ide
+      mhutchie.git-graph
     ];
   };
 }
