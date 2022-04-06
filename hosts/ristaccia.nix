@@ -31,7 +31,7 @@
     };
     redshift = {
       enable = true;
-      temperature.night = 2500;
+      temperature.night = 1200;
     };
     openssh = {
       enable = true;
