@@ -33,6 +33,10 @@
       enable = true;
       temperature.night = 2500;
     };
+    openssh = {
+      enable = true;
+      openFirewall = true;
+    };
   };
 
   location.provider = "geoclue2";
