@@ -87,5 +87,6 @@
     mpd
     gmpc
     vscodium
+    discord
   ];
 }
