@@ -29,6 +29,11 @@
       displayManager.lightdm.enable = true;
       desktopManager.mate.enable = true;
     };
+    xrdp = {
+      enable = true;
+      openFirewall = true;
+      defaultWindowManager = "mate-session";
+    };
     redshift = {
       enable = true;
       temperature.night = 1200;
