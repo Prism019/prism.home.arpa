@@ -17,6 +17,10 @@
   time.timeZone = "America/Los_Angeles";
 
   services = {
+    avahi = {
+      enable = true;
+      openFirewall = true;
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
