@@ -94,6 +94,7 @@
     element-desktop
     gimp
     libreoffice-fresh
+    mpv
     mpd
     gmpc
     vscodium
