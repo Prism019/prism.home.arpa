@@ -111,13 +111,13 @@ in
   };
 
   fonts = {
-    fonts = with pkgs; [ powerline-fonts dejavu_fonts ];
+    fonts = with pkgs; [ noto-fonts noto-fonts-cjk twemoji-color-font ];
 
     fontconfig.defaultFonts = {
 
-      monospace = [ "DejaVu Sans Mono for Powerline" ];
+      monospace = [ "Noto Sans Mono CJK JP" ];
 
-      sansSerif = [ "DejaVu Sans" ];
+      sansSerif = [ "Noto Sans CJK JP" ];
 
     };
   };
