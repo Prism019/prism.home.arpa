@@ -126,7 +126,7 @@
           };
           users = {
             nixos = { suites, ... }: { imports = suites.base; };
-            prism = { suites, ... }: { imports = suites.base; };
+            prism = ./users/prism/hm.nix;
           }; # digga.lib.importers.rakeLeaves ./users/hm;
         };
 
