@@ -8,7 +8,7 @@
       arrterian.nix-env-selector
       jnoortheen.nix-ide
       mhutchie.git-graph
-      ms-dotnettools.csharp
+      muhammad-sammy.csharp
     ];
   };
 }

@@ -1,0 +1,45 @@
+{
+    "OmniSharp__x86_64-linux": {
+        "installPath": ".omnisharp/1.38.2",
+        "binaries": [
+            "./mono.linux-x86_64",
+            "./run"
+        ],
+        "urls": [
+            "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.38.2/omnisharp-linux-x64.zip",
+            "https://roslynomnisharp.blob.core.windows.net/releases/1.38.2/omnisharp-linux-x64-1.38.2.zip"
+        ],
+        "sha256": "1qgb6b0qrb86cpjzqgj51rjvi1ir8lwghdxdz26yvalf58g5x6pj"
+    },
+    "OmniSharp-net6_0__x86_64-linux": {
+        "installPath": ".omnisharp/1.38.2-net6.0",
+        "binaries": [
+            "./OmniSharp"
+        ],
+        "urls": [
+            "https://github.com/OmniSharp/omnisharp-roslyn/releases/download/v1.38.2/omnisharp-linux-x64-net6.0.zip",
+            "https://roslynomnisharp.blob.core.windows.net/releases/1.38.2/omnisharp-linux-x64-net6.0-1.38.2.zip"
+        ],
+        "sha256": "07ww8gr6x7dxr1mmg19n2ckz7wnscq1b7yndnqfb3i2lzd08yxqz"
+    },
+    "Debugger__x86_64-linux": {
+        "installPath": ".debugger",
+        "binaries": [
+            "./netcoredbg/netcoredbg"
+        ],
+        "urls": [
+            "https://github.com/Samsung/netcoredbg/releases/download/2.0.0-895/netcoredbg-linux-amd64.tar.gz"
+        ],
+        "sha256": "150xywqna7j6707bl0mxbn5jy8lwvn0bfwb9asbzbpp3f1fqg54d"
+    },
+    "Razor__x86_64-linux": {
+        "installPath": ".razor",
+        "binaries": [
+            "./rzls"
+        ],
+        "urls": [
+            "https://download.visualstudio.microsoft.com/download/pr/b8678010-2cd7-4201-a5e7-ba57920607d5/b846e9c7d7afdba54a72fae1dcb6c42c/razorlanguageserver-linux-x64-6.0.0-preview.5.21358.6.zip"
+        ],
+        "sha256": "0gb36nlb7fgcv03a0awna1qyrsky6ys5gkpsmvxc5j35f1yq337b"
+    }
+}
