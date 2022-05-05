@@ -61,6 +61,8 @@
     firewall.allowPing = true;
   };
 
+  programs.wireshark.enable = true;
+
   nix.package = pkgs.nix_2_7;
 
   virtualisation = {
