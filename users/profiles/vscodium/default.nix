@@ -9,6 +9,7 @@
       jnoortheen.nix-ide
       mhutchie.git-graph
       muhammad-sammy.csharp
+      serayuzgur.crates
     ];
   };
 }
