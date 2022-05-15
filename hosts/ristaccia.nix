@@ -102,6 +102,7 @@
     firefox
     element-desktop
     gimp
+    kicad
     libreoffice-fresh
     mpv
     mpd
