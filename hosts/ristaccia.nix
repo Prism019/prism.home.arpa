@@ -27,6 +27,13 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
+      config.pipewire = {
+        "context.properties" = {
+          "default.clock.min-quantum" = 128;
+          "default.clock.quantum" = 128;
+          "default.clock.max-quantum" = 512;
+        };
+      };
     };
     xserver = {
       enable = true;
