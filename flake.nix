@@ -110,7 +110,7 @@
               users = digga.lib.rakeLeaves ./users;
             };
             suites = with profiles; rec {
-              base = [ core users.root users.prism ];
+              base = [ core archives users.root users.prism ];
             };
           };
         };
