@@ -13,6 +13,7 @@ channels: final: prev: {
     signal-desktop
     starship
     deploy-rs
+    steam
     ;
 
   haskellPackages = prev.haskellPackages.override

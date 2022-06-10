@@ -14,6 +14,8 @@
     kernelModules = [ "kvm-amd" ];
   };
 
+  hardware.opengl.driSupport32Bit = true;
+
   time.timeZone = "America/Los_Angeles";
 
   services = {
@@ -53,6 +55,9 @@
       enable = true;
       openFirewall = true;
       forwardX11 = true;
+    };
+    udev = {
+      packages = with pkgs; [ xr-hardware ];
     };
   };
 
@@ -117,5 +122,7 @@
     vscodium
     discord
     virt-manager
+    openhmd-git
+    steam
   ];
 }
