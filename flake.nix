@@ -12,13 +12,10 @@
 
       digga.url = "github:divnix/digga";
       digga.inputs.nixpkgs.follows = "nixos";
+      digga.inputs.latest.follows = "latest";
       digga.inputs.nixlib.follows = "nixos";
       digga.inputs.home-manager.follows = "home";
       digga.inputs.deploy.follows = "deploy";
-
-      bud.url = "github:divnix/bud";
-      bud.inputs.nixpkgs.follows = "nixos";
-      bud.inputs.devshell.follows = "digga/devshell";
 
       home.url = "github:nix-community/home-manager/release-21.11";
       home.inputs.nixpkgs.follows = "nixos";
@@ -32,25 +29,17 @@
       agenix.url = "github:ryantm/agenix";
       agenix.inputs.nixpkgs.follows = "nixos";
 
-      nvfetcher.url = "github:berberman/nvfetcher";
-      nvfetcher.inputs.nixpkgs.follows = "nixos";
-
-      naersk.url = "github:nmattia/naersk";
-      naersk.inputs.nixpkgs.follows = "nixos";
-
       nixos-hardware.url = "github:nixos/nixos-hardware";
     };
 
   outputs =
     { self
     , digga
-    , bud
     , nixos
     , home
     , nixos-hardware
     , nur
     , agenix
-    , nvfetcher
     , deploy
     , ...
     } @ inputs:
@@ -66,8 +55,6 @@
             overlays = [
               nur.overlay
               agenix.overlay
-              nvfetcher.overlay
-              ./pkgs/default.nix
             ];
           };
           latest = { };
@@ -95,7 +82,6 @@
               digga.nixosModules.nixConfig
               home.nixosModules.home-manager
               agenix.nixosModules.age
-              bud.nixosModules.bud
             ];
           };
 

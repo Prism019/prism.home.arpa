@@ -30,7 +30,6 @@ in
       gptfdisk
       iputils
       jq
-      manix
       moreutils
       nix-index
       nmap
@@ -82,9 +81,6 @@ in
         srch = "ns nixos";
         orch = "ns override";
         nrb = ifSudo "sudo nixos-rebuild";
-        mn = ''
-          manix "" | grep '^# ' | sed 's/^# \(.*\) (.*/\1/;s/ (.*//;s/^# //' | sk --preview="manix '{}'" | xargs manix
-        '';
 
         # fix nixos-option
         nixos-option = "nixos-option -I nixpkgs=${self}/lib/compat";
