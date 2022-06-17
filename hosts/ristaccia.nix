@@ -75,8 +75,6 @@
 
   programs.wireshark.enable = true;
 
-  nix.package = pkgs.nix_2_7;
-
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
