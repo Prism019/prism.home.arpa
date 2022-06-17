@@ -23,6 +23,7 @@
       enable = true;
       openFirewall = true;
     };
+    flatpak.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -121,6 +122,7 @@
     discord
     virt-manager
     openhmd-git
-    steam
   ];
+
+  xdg.portal.enable = true;
 }
