@@ -14,7 +14,30 @@
     kernelModules = [ "kvm-amd" ];
   };
 
-  hardware.opengl.driSupport32Bit = true;
+  environment = {
+    gnome.excludePackages = (with pkgs; [
+      gnome-photos
+      gnome-tour
+    ]) ++ (with pkgs.gnome; [
+      cheese
+      gnome-calendar
+      gnome-music
+      geary
+      epiphany
+      gnome-maps
+      seahorse
+      gnome-weather
+      simple-scan
+      gnome-software
+      gnome-contacts
+      totem
+    ]);
+  };
+
+  hardware = {
+    opengl.driSupport32Bit = true;
+    pulseaudio.enable = false;
+  };
 
   time.timeZone = "America/Los_Angeles";
 
@@ -24,6 +47,10 @@
       openFirewall = true;
     };
     flatpak.enable = true;
+    gnome = {
+      tracker.enable = false;
+      gnome-remote-desktop.enable = true;
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -40,17 +67,8 @@
     };
     xserver = {
       enable = true;
-      displayManager.lightdm.enable = true;
-      desktopManager.mate.enable = true;
-    };
-    xrdp = {
-      enable = true;
-      openFirewall = true;
-      defaultWindowManager = "mate-session";
-    };
-    redshift = {
-      enable = true;
-      temperature.night = 1200;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
     };
     openssh = {
       enable = true;
@@ -58,7 +76,10 @@
       forwardX11 = true;
     };
     udev = {
-      packages = with pkgs; [ xr-hardware ];
+      packages = with pkgs; [
+        xr-hardware
+        gnome.gnome-settings-daemon
+      ];
     };
   };
 
@@ -71,7 +92,11 @@
     interfaces.enp34s0.useDHCP = true;
     hostName = "ristaccia";
     domain = "prism.home.arpa";
-    firewall.allowPing = true;
+    firewall = {
+      allowPing = true;
+      allowedUDPPorts = [ 3389 ];
+      allowedTCPPorts = [ 3389 ];
+    };
   };
 
   programs.wireshark.enable = true;
@@ -109,7 +134,7 @@
     }
   ];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     firefox
     element-desktop
     gimp
@@ -122,7 +147,11 @@
     discord
     virt-manager
     openhmd-git
-  ];
+  ]) ++ (with pkgs.gnomeExtensions; [
+    appindicator
+    just-perfection
+    dash-to-panel
+  ]);
 
   xdg.portal.enable = true;
 }
