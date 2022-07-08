@@ -10,6 +10,7 @@
       mhutchie.git-graph
       muhammad-sammy.csharp
       serayuzgur.crates
+      eamodio.gitlens
     ];
   };
 }
