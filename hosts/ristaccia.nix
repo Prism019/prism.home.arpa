@@ -17,6 +17,7 @@
   environment = {
     gnome.excludePackages = (with pkgs; [
       gnome-photos
+      gnome-console
       gnome-tour
     ]) ++ (with pkgs.gnome; [
       cheese
@@ -99,8 +100,10 @@
     };
   };
 
-  programs.wireshark.enable = true;
-
+  programs = {
+    wireshark.enable = true;
+    gnome-terminal.enable = true;
+  };
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
