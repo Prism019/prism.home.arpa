@@ -33,6 +33,24 @@
       gnome-contacts
       totem
     ]);
+    systemPackages = (with pkgs; [
+      firefox-wayland
+      element-desktop
+      gimp
+      kicad
+      libreoffice-fresh
+      mpv
+      mpd
+      gmpc
+      vscodium
+      discord
+      virt-manager
+      openhmd-git
+    ]) ++ (with pkgs.gnomeExtensions; [
+      appindicator
+      just-perfection
+      dash-to-panel
+    ]);
   };
 
   hardware = {
@@ -136,25 +154,6 @@
       device = "/dev/disk/by-uuid/9f5c439b-642d-44a9-be96-096ecfd33822";
     }
   ];
-
-  environment.systemPackages = (with pkgs; [
-    firefox
-    element-desktop
-    gimp
-    kicad
-    libreoffice-fresh
-    mpv
-    mpd
-    gmpc
-    vscodium
-    discord
-    virt-manager
-    openhmd-git
-  ]) ++ (with pkgs.gnomeExtensions; [
-    appindicator
-    just-perfection
-    dash-to-panel
-  ]);
 
   xdg.portal.enable = true;
 }
