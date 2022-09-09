@@ -12,6 +12,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     kernelModules = [ "kvm-amd" ];
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   };
 
   environment = {
