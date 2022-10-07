@@ -142,6 +142,9 @@
     wireshark.enable = true;
     gnome-terminal.enable = true;
   };
+
+  powerManagement.cpuFreqGovernor = "schedutil";
+
   virtualisation = {
     libvirtd.enable = true;
     spiceUSBRedirection.enable = true;
