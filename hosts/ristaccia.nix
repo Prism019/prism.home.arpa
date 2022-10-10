@@ -117,6 +117,7 @@
     udev = {
       packages = with pkgs; [
         xr-hardware
+        libfreenect
         gnome.gnome-settings-daemon
       ];
     };
