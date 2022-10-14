@@ -116,6 +116,8 @@ in
       sansSerif = [ "Noto Sans CJK JP" ];
 
     };
+
+    fontDir.enable = true;
   };
 
   nix = {

@@ -44,7 +44,6 @@
       mpd
       gmpc
       vscodium
-      discord
       virt-manager
       openhmd-git
     ]) ++ (with pkgs.gnomeExtensions; [
