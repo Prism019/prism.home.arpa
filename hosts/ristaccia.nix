@@ -1,5 +1,7 @@
 { suites, lib, config, pkgs, ... }:
-{
+let
+  kernel = pkgs.linuxPackages_6_0;
+in {
   imports = suites.base;
 
   boot = {
@@ -11,8 +13,9 @@
     supportedFilesystems = [ "ntfs" ];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
+    kernelPackages = kernel;
     kernelModules = [ "kvm-amd" "nct6775" ];
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    extraModulePackages = with kernel; [ v4l2loopback ];
   };
 
   environment = {
