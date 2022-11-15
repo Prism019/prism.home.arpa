@@ -150,6 +150,11 @@
     spiceUSBRedirection.enable = true;
   };
 
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ mozc ];
+  };
+
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/35ca9b44-6aba-4c1e-9a16-b05823e46fed";
