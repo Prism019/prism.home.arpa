@@ -42,8 +42,9 @@ in {
       totem
     ]);
     systemPackages = (with pkgs; [
-      firefox-wayland
+      firefox
       element-desktop
+      openasar
       gimp
       kicad
       libreoffice-fresh
@@ -52,7 +53,7 @@ in {
       gmpc
       vscodium
       virt-manager
-      openhmd-git
+      # openhmd-git
     ]) ++ (with pkgs.gnomeExtensions; [
       appindicator
       just-perfection
@@ -64,8 +65,7 @@ in {
     opengl = {
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        rocm-opencl-icd
-        rocm-opencl-runtime
+        intel-compute-runtime
       ];
     };
     pulseaudio.enable = false;
@@ -153,7 +153,10 @@ in {
   powerManagement.cpuFreqGovernor = "schedutil";
 
   virtualisation = {
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu.package = pkgs.qemu_kvm;
+    };
     spiceUSBRedirection.enable = true;
   };
 
@@ -189,6 +192,8 @@ in {
       device = "/dev/disk/by-uuid/9f5c439b-642d-44a9-be96-096ecfd33822";
     }
   ];
+
+  system.stateVersion = "22.11";
 
   xdg.portal.enable = true;
 }

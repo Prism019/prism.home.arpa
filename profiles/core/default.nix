@@ -11,9 +11,6 @@ in
     openFirewall = lib.mkDefault false;
   };
 
-  # This is just a representation of the nix default
-  nix.systemFeatures = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
-
   environment = {
 
     # Selection of sysadmin tools that can come in handy
@@ -107,7 +104,7 @@ in
   };
 
   fonts = {
-    fonts = with pkgs; [ noto-fonts noto-fonts-cjk twemoji-color-font ];
+    fonts = with pkgs; [ noto-fonts noto-fonts-cjk-sans twemoji-color-font ];
 
     fontconfig.defaultFonts = {
 
@@ -121,17 +118,23 @@ in
   };
 
   nix = {
+    settings = {
+      # This is just a representation of the nix default
+      system-features = [ "nixos-test" "benchmark" "big-parallel" "kvm" ];
+
+      # Prevents impurities in builds
+      sandbox = true;
+
+      # give root and @wheel special privileges with nix
+      trusted-users = [ "root" "@wheel" ];
+
+      # Improve nix store disk usage
+      auto-optimise-store = true;
+    };
 
     # Improve nix store disk usage
-    autoOptimiseStore = true;
     gc.automatic = true;
     optimise.automatic = true;
-
-    # Prevents impurities in builds
-    useSandbox = true;
-
-    # give root and @wheel special privileges with nix
-    trustedUsers = [ "root" "@wheel" ];
 
     # Generally useful nix option defaults
     extraOptions = ''

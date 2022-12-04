@@ -16,6 +16,8 @@ channels: final: prev: {
     steam
     ;
 
+  openasar = prev.discord.override { withOpenASAR = true; };
+
   haskellPackages = prev.haskellPackages.override
     (old: {
       overrides = prev.lib.composeExtensions (old.overrides or (_: _: { })) (hfinal: hprev:
